@@ -1,3 +1,5 @@
+BIN_FILE ?=../app/1d2/make/standard/standard.bin
+
 VERILATOR=verilator
 
 VERILATOR_FLAGS =
@@ -24,7 +26,7 @@ default: run
 run:
 	@echo
 	@echo "-- VERILATE ----------------"
-	@$(VERILATOR) $(VERILATOR_FLAGS) $(VERILATOR_INPUT) --binary -j 0 -I../rtl -I../rtl/aes --timescale 1ns/1ns
+	@$(VERILATOR) $(VERILATOR_FLAGS) $(VERILATOR_INPUT) --binary -j 0 -I../rtl -I../rtl/aes --timescale 1ns/1ns -GBIN_FILE="\"$(BIN_FILE)\""
 
 	@echo
 	@echo "-- RUN ---------------------"

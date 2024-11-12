@@ -23,8 +23,9 @@
 
 module testbench
     import RS5_pkg::*;
-(
-);
+#(
+    parameter string BIN_FILE = "../app/riscv-tests/test.bin"
+) ();
     timeunit 1ns; timeprecision 1ns;
 
 //////////////////////////////////////////////////////////////////////////////
@@ -46,7 +47,6 @@ module testbench
 `endif
 
     localparam int           MEM_WIDTH       = 65_536;
-    localparam string        BIN_FILE        = "../app/riscv-tests/test.bin";
 
     localparam int           i_cnt = 1;
 
